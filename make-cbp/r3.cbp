@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="r3-host-kit" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option platforms="Windows;" />
+				<Option output="bin\Debug\r3" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option platforms="Windows;" />
+				<Option output="bin\Release\r3" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O1" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-c" />
+			<Add option="-DUNICODE" />
+			<Add directory="..\src\include" />
+		</Compiler>
+		<Linker>
+			<Add option="-lm" />
+			<Add library="wsock32" />
+			<Add library="comdlg32" />
+			<Add library="gdi32" />
+			<Add library="stdc++" />
+			<Add library="r3lib" />
+			<Add directory="..\lib" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="post-build-win.cmd $(TARGET_OUTPUT_DIR)" />
+		</ExtraCommands>
+		<Unit filename="..\src\agg\agg_arc.cpp" />
+		<Unit filename="..\src\agg\agg_arrowhead.cpp" />
+		<Unit filename="..\src\agg\agg_bezier_arc.cpp" />
+		<Unit filename="..\src\agg\agg_bspline.cpp" />
+		<Unit filename="..\src\agg\agg_compo.cpp" />
+		<Unit filename="..\src\agg\agg_curves.cpp" />
+		<Unit filename="..\src\agg\agg_font_win32_tt.cpp" />
+		<Unit filename="..\src\agg\agg_graphics.cpp" />
+		<Unit filename="..\src\agg\agg_image_filters.cpp" />
+		<Unit filename="..\src\agg\agg_line_aa_basics.cpp" />
+		<Unit filename="..\src\agg\agg_path_storage.cpp" />
+		<Unit filename="..\src\agg\agg_rasterizer_scanline_aa.cpp" />
+		<Unit filename="..\src\agg\agg_rounded_rect.cpp" />
+		<Unit filename="..\src\agg\agg_scanline_u.h" />
+		<Unit filename="..\src\agg\agg_sqrt_tables.cpp" />
+		<Unit filename="..\src\agg\agg_trans_affine.cpp" />
+		<Unit filename="..\src\agg\agg_trans_single_path.cpp" />
+		<Unit filename="..\src\agg\agg_truetype_text.cpp" />
+		<Unit filename="..\src\agg\agg_vcgen_bspline.cpp" />
+		<Unit filename="..\src\agg\agg_vcgen_contour.cpp" />
+		<Unit filename="..\src\agg\agg_vcgen_dash.cpp" />
+		<Unit filename="..\src\agg\agg_vcgen_markers_term.cpp" />
+		<Unit filename="..\src\agg\agg_vcgen_smooth_poly1.cpp" />
+		<Unit filename="..\src\agg\agg_vcgen_stroke.cpp" />
+		<Unit filename="..\src\agg\agg_vpgen_segmentator.cpp" />
+		<Unit filename="..\src\agg\compositor.cpp" />
+		<Unit filename="..\src\agg\graphics.cpp" />
+		<Unit filename="..\src\agg\rich_text.cpp" />
+		<Unit filename="..\src\include\agg-compositor.h" />
+		<Unit filename="..\src\include\agg-draw.h" />
+		<Unit filename="..\src\include\agg-text.h" />
+		<Unit filename="..\src\include\ext-types.h" />
+		<Unit filename="..\src\include\host-ext-draw.h" />
+		<Unit filename="..\src\include\host-ext-graphics.h" />
+		<Unit filename="..\src\include\host-ext-shape.h" />
+		<Unit filename="..\src\include\host-ext-text.h" />
+		<Unit filename="..\src\include\host-lib.h" />
+		<Unit filename="..\src\include\reb-args.h" />
+		<Unit filename="..\src\include\reb-c.h" />
+		<Unit filename="..\src\include\reb-config.h" />
+		<Unit filename="..\src\include\reb-defs.h" />
+		<Unit filename="..\src\include\reb-device.h" />
+		<Unit filename="..\src\include\reb-event.h" />
+		<Unit filename="..\src\include\reb-evtypes.h" />
+		<Unit filename="..\src\include\reb-ext.h" />
+		<Unit filename="..\src\include\reb-file.h" />
+		<Unit filename="..\src\include\reb-filereq.h" />
+		<Unit filename="..\src\include\reb-gob.h" />
+		<Unit filename="..\src\include\reb-host.h" />
+		<Unit filename="..\src\include\reb-lib.h" />
+		<Unit filename="..\src\include\reb-net.h" />
+		<Unit filename="..\src\include\reb-to.h" />
+		<Unit filename="..\src\include\rebol-lib.h" />
+		<Unit filename="..\src\include\sys-net.h" />
+		<Unit filename="..\src\os\dev-dns.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\dev-net.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\host-args.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\host-device.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\host-main.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\host-stdio.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\dev-clipboard.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\dev-event.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\dev-file.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\dev-stdio.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\host-event.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\host-graphics.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\host-lib.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Unit filename="..\src\os\win32\host-window.c">
+			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options $includes -c $file -fpack-struct -o $object" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
